@@ -7,5 +7,5 @@ from gevent.wsgi import WSGIServer
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app = loadapp('config:settings.ini', relative_to='.')
-    WSGIServer(('0.0.0.0', int(os.environ.get("PORT", 5000))), app).server_forever()
+    WSGIServer(('0.0.0.0', int(os.environ.get("PORT", 5000))), app).serve_forever()
     #serve(app, host='0.0.0.0', port=port)
