@@ -34,3 +34,13 @@ class HomepageView(object):
         self.rendered_includes = ptah.render_includes(request)
         self.rendered_messages = ptah.render_messages(request)
         return {}
+
+@view_config('wstest2.html',
+             parent='workspace', #ptah.wrap_layout(),
+             renderer='urbsly:templates/wstest.pt')
+def wstest_view(request):
+    ptah.include(request, 'wscrud-styles')
+    ptah.include(request, 'jquery')
+    ptah.include(request, 'jquery-ui')
+    ptah.include(request, 'ckeditor')
+    return {}
