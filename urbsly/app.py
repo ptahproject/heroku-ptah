@@ -33,7 +33,7 @@ def main(global_config, **settings):
     config.ptah_init_sql()
 
     # enable ptah management
-    config.ptah_init_manage(managers=('*',))
+    config.ptah_init_manage(managers=('admin',))
 
     # populate database
     config.ptah_populate()
