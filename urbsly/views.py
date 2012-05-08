@@ -5,9 +5,6 @@ from pyramid.view import view_config
 log = logging.getLogger(__name__)
 
 
-@view_config(renderer='urbsly:templates/homepage.pt',
-             route_name='home')
-
 ptah.layout.register('page', renderer='urbsly:templates/layoutpage.pt', use_global_views=True)
 
 @ptah.layout('workspace', 
@@ -23,6 +20,8 @@ class LayoutWorkspace(ptah.View):
         self.ptahManager = ptah.manage.check_access(
             ptah.auth_service.get_userid(), self.request)
 
+@view_config(renderer='urbsly:templates/homepage.pt',
+             route_name='home')
 class HomepageView(object):
 
     def __init__(self, request):
