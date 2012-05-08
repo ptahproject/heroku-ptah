@@ -36,7 +36,8 @@ class HomepageView(object):
         return {}
 
 @view_config('wstest2.html',
-             parent='workspace', #ptah.wrap_layout(),
+             wrapper=ptah.wrap_layout(),
+#parent='workspace', #ptah.wrap_layout(),
              renderer='urbsly:templates/wstest.pt')
 def wstest_view(request):
     ptah.include(request, 'wscrud-styles')
