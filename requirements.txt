@@ -23,4 +23,4 @@ wsgiref==0.1.2
 zope.deprecation==3.5.1
 zope.interface==3.8.0
 zope.sqlalchemy==0.7
-pyramid_sockjs
+http://gevent.googlecode.com/files/gevent-1.0b2.tar.gz
