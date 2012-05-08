@@ -9,7 +9,7 @@ alembic==0.3.2
 distribute==0.6.19
 psycopg2==2.4.5
 -e git://github.com/ptahproject/ptah.git#egg=ptah
-https://github.com/ptahproject/ptah_wscrud/zipball/master
+-e git://github.com/ptahproject/ptah_wscrud.git#egg=ptah_wscrud
 -e git://github.com/ptahproject/ptahcrowd.git#egg=ptahcrowd
 -e git://github.com/ptahproject/ptahcms#egg=ptahcms
 pyramid_sockjs
