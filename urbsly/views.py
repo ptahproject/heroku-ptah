@@ -20,6 +20,13 @@ class LayoutWorkspace(ptah.View):
         self.ptahManager = ptah.manage.check_access(
             ptah.auth_service.get_userid(), self.request)
 
+
+@ptah.layout('', parent="workspace",
+             renderer="urbsly:templates/layouttemplate.pt")
+class ContentLayout(ptah.View):
+    def update(self):
+        self.actions = ptah.list_uiactions(self.context, self.request)
+
 @view_config(renderer='urbsly:templates/homepage.pt',
              route_name='home')
 class HomepageView(object):
@@ -37,8 +44,8 @@ class HomepageView(object):
 
 @view_config('wstest2.html',
              wrapper=ptah.wrap_layout(),
-#parent='workspace', #ptah.wrap_layout(),
              renderer='urbsly:templates/wstest.pt')
+
 def wstest_view(request):
     ptah.include(request, 'wscrud-styles')
     ptah.include(request, 'jquery')

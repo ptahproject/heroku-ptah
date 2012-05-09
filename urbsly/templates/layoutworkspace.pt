@@ -3,7 +3,7 @@
                  root_url request.resource_url(request.root)">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="${root_url}">${context.title}</a>
+      <a class="brand" href="${root_url}">Title</a>
       <tal:block tal:condition="not view.isAnon">
         <ul class="nav pull-right">
           <li class="active">

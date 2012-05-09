@@ -24,7 +24,10 @@ def main(global_config, **settings):
 
     # Info: This includes packages which have Pyramid configuration
     config.include('ptah')
-    config.commit()
+    #config.commit()
+
+    #from ptah.amd import init_amd_spec
+    #init_amd_spec(config)
 
     # Refer: Ptah: _Initialization_
     config.ptah_init_settings()
