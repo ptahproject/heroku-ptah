@@ -4,3 +4,4 @@ modules =
    sockjs
    ptah
    ptah-wscrud
+   ptah-templates
