@@ -31,7 +31,7 @@ class ContentLayout(ptah.View):
         self.actions = ptah.list_uiactions(self.context, self.request)
 
 @view_config(renderer='urbsly:templates/homepage.pt',
-             route_name='home')
+             route_name='home2')
 class HomepageView(object):
 
     def __init__(self, request):
@@ -45,7 +45,7 @@ class HomepageView(object):
         self.rendered_messages = ptah.render_messages(request)
         return {}
 
-@view_config('',
+@view_config(route_name='home',
              wrapper=ptah.wrap_layout(),
              renderer='urbsly:templates/wstest.pt')
 
