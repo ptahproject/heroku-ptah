@@ -47,7 +47,7 @@ class HomepageView(object):
         self.rendered_messages = ptah.render_messages(request)
         return {}
 
-@view_config('wstest.html'
+@view_config('wstest.html',
              wrapper=ptah.wrap_layout(),
              renderer='urbsly:templates/wstest.pt')
 
