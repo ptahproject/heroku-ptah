@@ -1,4 +1,5 @@
 import logging
+from pyramid.httpexceptions import HTTPFound
 import ptah
 from pyramid.view import view_config
 
@@ -31,7 +32,7 @@ class ContentLayout(ptah.View):
         self.actions = ptah.list_uiactions(self.context, self.request)
 
 @view_config(renderer='urbsly:templates/homepage.pt',
-             route_name='home2')
+             route_name='home')
 class HomepageView(object):
 
     def __init__(self, request):
@@ -40,13 +41,13 @@ class HomepageView(object):
         ptah.include(request, 'bootstrap-js')
 
     def __call__(self):
+        raise HTTPFound(location='/wstest.html')
         request = self.request
         self.rendered_includes = ptah.render_includes(request)
         self.rendered_messages = ptah.render_messages(request)
         return {}
 
-@view_config(route_name='home',
-             #permission='system.Authenticated',
+@view_config('wstest.html'
              wrapper=ptah.wrap_layout(),
              renderer='urbsly:templates/wstest.pt')
 
