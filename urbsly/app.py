@@ -43,6 +43,8 @@ def main(global_config, **settings):
 
     # Refer: Pyramid's _URL Dispatch_
     config.add_route('home', '/')
+    config.add_route('home2', '/home')
+
 
     # static assets
     config.add_static_view('_urbsly', 'urbsly:static')

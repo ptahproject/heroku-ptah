@@ -46,6 +46,7 @@ class HomepageView(object):
         return {}
 
 @view_config(route_name='home',
+             permission='system.Authenticated',
              wrapper=ptah.wrap_layout(),
              renderer='urbsly:templates/wstest.pt')
 
