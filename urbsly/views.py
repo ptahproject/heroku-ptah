@@ -7,6 +7,9 @@ log = logging.getLogger(__name__)
 
 ptah.layout.register('page', renderer='urbsly:templates/layoutpage.pt', use_global_views=True)
 
+ptah.layout.register('ptah-page', renderer='urbsly:templates/layoutpage.pt', use_global_views=True)
+
+
 @ptah.layout('workspace', 
              parent="page", renderer="urbsly:templates/layoutworkspace.pt",
              use_global_views=True)
