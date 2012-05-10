@@ -43,7 +43,7 @@ def main(global_config, **settings):
 
     # Refer: Pyramid's _URL Dispatch_
     config.add_route('home', '/')
-    config.add_route('home2', '/home')
+    config.add_route('home2', '/home2')
 
 
     # static assets
