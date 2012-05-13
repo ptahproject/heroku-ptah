@@ -9,7 +9,6 @@ alembic==0.3.2
 distribute==0.6.19
 psycopg2==2.4.5
 -e git://github.com/ptahproject/ptah.git#egg=ptah
--e git://github.com/ptahproject/ptah_wscrud.git#egg=ptah_wscrud
 -e git://github.com/ptahproject/ptahcrowd.git#egg=ptahcrowd
 -e git://github.com/ptahproject/ptahcms#egg=ptahcms
 pyramid_sockjs
@@ -26,5 +25,5 @@ waitress==0.8.1
 wsgiref==0.1.2
 zope.deprecation==3.5.1
 zope.interface==4.0.0
-zope.sqlalchemy==0.7
+zope.sqlalchemy==0.7.1
 http://gevent.googlecode.com/files/gevent-1.0b2.tar.gz

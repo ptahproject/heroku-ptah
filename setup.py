@@ -6,7 +6,8 @@ here = os.path.abspath(os.path.dirname(__file__))
 
 requires = [
     'ptah',
-    'pyramid', 
+    'pyramid',
+    'pyramid_sockjs',
     'pyramid_debugtoolbar']
 
 test_requires = [
@@ -15,10 +16,10 @@ test_requires = [
     'pyramid',]
 
 
-setup(name='urbsly',
-      version='0.0',
-      description='urbsly',
-      long_description="Your description here",
+setup(name='herokuapp',
+      version='0.1',
+      description='herokuapp',
+      long_description="single page js application using ptah",
       classifiers=[
         "Programming Language :: Python",
         "Framework :: Pylons",
@@ -37,7 +38,7 @@ setup(name='urbsly',
       test_suite = 'nose.collector',
       entry_points = """\
         [paste.app_factory]
-        main = urbsly.app:main
+        main = herokuapp.app:main
       """,
       paster_plugins=['pyramid'],
       )

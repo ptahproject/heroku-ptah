@@ -1,0 +1,24 @@
+<div class="row-fluid" data-place="model" style="display:none">
+  <div class="page-header">
+    <h1>{{name}}</h1>
+    <p>{{description}}</p>
+  </div>
+
+  <div class="span12">
+    <table class="table table-striped">
+      <tbody data-place="data">
+        {{#data}}
+          <tr>
+            <td>
+              <h2>
+                <a href="javascript:void(0)"
+                  data-action="model" data-uri="{{uri}}">{{name}}</a>
+              </h2>
+              <p>{{description}}</p>
+            </td>
+          </tr>
+        {{/data}}
+      </tbody>
+    </table>
+  </div>
+</div>

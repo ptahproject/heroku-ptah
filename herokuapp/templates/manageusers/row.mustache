@@ -1,0 +1,29 @@
+<tr data-item="{{uri}}">
+  <td><input type="checkbox" name="uid" value="{{uri}}" /></td>
+  <td><a href="#" data-action="modify" data-user="{{uri}}">{{name}}</a></td>
+  <td>{{login}}</td>
+  <td>{{roles}}</td>
+  <td>
+  {{#suspended}}
+    <a href="#" data-action="activate_user" data-uri="{{uri}}">Yes</a>
+  {{/suspended}}
+  {{^suspended}}
+    <a href="#" data-action="suspend_user" data-uri="{{uri}}">No</a>
+  {{/suspended}}
+  </td>
+  {{#validated}}
+  <td>Yes</td>
+  {{/validated}}
+  {{^validated}}
+  <td><a href="#" data-action="validate_user" data-uri="{{uri}}">No</a></td>
+  {{/validated}}
+  <td>{{dateTime joined}}</td>
+  <td data-column="online">
+    {{#online}}
+      <i class="icon-online"/> Online
+    {{/online}}
+    {{^online}}
+    <i class="icon-offline"/> Offline
+    {{/online}}
+  </td>
+</tr>

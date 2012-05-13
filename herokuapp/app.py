@@ -24,10 +24,6 @@ def main(global_config, **settings):
 
     # Info: This includes packages which have Pyramid configuration
     config.include('ptah')
-    #config.commit()
-
-    #from ptah.amd import init_amd_spec
-    #init_amd_spec(config)
 
     # Refer: Ptah: _Initialization_
     config.ptah_init_settings()
@@ -45,9 +41,11 @@ def main(global_config, **settings):
     config.add_route('home', '/')
     config.add_route('home2', '/home2')
 
-
     # static assets
-    config.add_static_view('_urbsly', 'urbsly:static')
+    config.add_static_view('_herokuapp', 'herokuapp:static')
+
+    # js protocols
+    config.include('herokuapp.protocols')
 
     # add role
     Admin = ptah.Role('admin', 'Admin')
@@ -57,3 +55,12 @@ def main(global_config, **settings):
     config.scan()
 
     return config.make_wsgi_app()
+
+
+import ptah
+ptah.library(
+    'wscrud-styles',
+    path='herokuapp:static/styles.css',
+    type="css",
+    require=('bootstrap',))
+ 

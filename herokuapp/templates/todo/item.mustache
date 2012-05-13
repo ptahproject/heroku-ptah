@@ -1,0 +1,15 @@
+<tr data-item="{{id}}">
+  <td>
+    <input type="checkbox" data-action="complete" data-id="{{id}}"
+        {{#completed}}checked{{/completed}} />
+  </td>
+  <td>
+    {{text}}
+  </td>
+  <td>
+    <small>Created by {{creator}} on
+      {{dateTime created}}</small>
+    <a href="#" data-id="{{id}}"
+      data-action="remove" class="btn btn-danger">Remove</a>
+  </td>
+</tr>

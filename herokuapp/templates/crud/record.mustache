@@ -1,0 +1,13 @@
+{{#page}}
+  <tr>
+    {{#item}}
+      {{#id}}
+        <td><a href="javascript:void(0)" data-action="edit"
+          data-uri="{{uri}}">{{v}}</a></td>
+      {{/id}}
+      {{^id}}
+      <td>{{v}}</td>
+      {{/id}}
+    {{/item}}
+  </tr>
+{{/page}}

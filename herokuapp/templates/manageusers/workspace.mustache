@@ -1,0 +1,39 @@
+<div class="row-fluid">
+  <div class="page-header">
+    <h1>Manage users</h1>
+  </div>
+
+  <div class="span11">
+    <form data-form="users-listing">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>&nbsp;</th>
+            <th>Name</th>
+            <th>Login/Email</th>
+            <th>Role</th>
+            <th>Suspended</th>
+            <th>Validated</th>
+            <th>Joined</th>
+            <th>Online</th>
+          </tr>
+        </thead>
+
+        <tbody data-place="users-listing">
+          {{#users}}
+            {{>row}}
+          {{/users}}
+        </tbody>
+      </table>
+
+      <div class="" jca="ui/pager">
+      </div>
+
+      <div class="form-actions listing-actions">
+        <a href="#" class="btn btn-danger" data-action="remove">
+          {{#i18n}}Remove{{/i18n}}</a>
+        <a href="#" class="btn btn-info" data-action="create">Create</a>
+      </div>
+    </form>
+  </div>
+</div>
