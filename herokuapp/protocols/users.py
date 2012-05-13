@@ -147,7 +147,7 @@ class UserAddForm(Form):
         with ptah.sa_session() as sa:
             # create user
             user = ptahcrowd.CrowdUser.__type__.create(
-                title=data['name'],
+                name=data['name'],
                 login=data['login'],
                 email=data['login'],
                 suspended = data['suspended'],
@@ -198,7 +198,7 @@ class ModifyUserForm(Form, ModifyUserForm):
         user = self.user
 
         # update attrs
-        user.title = data['name']
+        user.name = data['name']
         user.login = data['login']
         user.email = data['login']
         if data['password'] is not ptah.form.null:
