@@ -49,6 +49,9 @@ def main(global_config, **settings):
     # static assets
     config.add_static_view('_urbsly', 'urbsly:static')
 
+    # add role
+    Admin = ptah.Role('admin', 'Admin')
+
     # Refer: Pyramid's _Configuration Decorations and Code Scanning_
     config.scan()
 
