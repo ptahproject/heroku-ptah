@@ -51,6 +51,7 @@ def main(global_config, **settings):
 
     # add role
     Admin = ptah.Role('admin', 'Admin')
+    Manager = ptah.Role('manager', 'Manager')
 
     # Refer: Pyramid's _Configuration Decorations and Code Scanning_
     config.scan()
