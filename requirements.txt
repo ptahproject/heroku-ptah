@@ -28,3 +28,4 @@ zope.deprecation==3.5.1
 zope.interface==3.8.0
 zope.sqlalchemy==0.7
 http://gevent.googlecode.com/files/gevent-1.0b2.tar.gz
+http://pypi.python.org/packages/source/s/simplejson/simplejson-2.5.2.tar.gz#md5=d7a7acf0bd7681bd116b5c981d2f7959
