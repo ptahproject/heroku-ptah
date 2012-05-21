@@ -12,7 +12,5 @@
   <body>
     <!-- Rendered content that is beeing passed to layout.render method -->
     ${structure: wrapped_content}
-
-    ${structure: request.render_amd_includes("main")}
   </body>
 </html>
