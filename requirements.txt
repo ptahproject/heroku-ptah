@@ -25,6 +25,6 @@ venusian==1.0a6
 waitress==0.8.1
 wsgiref==0.1.2
 zope.deprecation==3.5.1
-zope.interface==4.0.1
+zope.interface==4.0.0
 zope.sqlalchemy==0.7
 http://gevent.googlecode.com/files/gevent-1.0b2.tar.gz
