@@ -61,7 +61,7 @@ def main(global_config, **settings):
     config.scan()
 
     config.commit()
-    ptah.sockjs.get_session_manager().start()
+    ptah.sockjs.get_session_manager(config.registry).start()
 
     return config.make_wsgi_app()
 
