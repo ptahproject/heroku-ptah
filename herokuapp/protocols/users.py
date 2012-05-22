@@ -16,9 +16,13 @@ class UsersProtocol(Protocol):
         super(UsersProtocol, self).__init__(*args, **kw)
 
         principal = ptah.auth_service.get_current_principal()
-        self.user_id = principal.__uri__
-        self.user_name = principal.name
-
+        if principal:
+            self.user_id = principal.__uri__
+            self.user_name = principal.name
+        else:
+            self.user_id = None
+            self.user_name = 'Anonymous'
+ 
     def get_user_data(self, user):
         roles = get_roles_vocabulary(None)
 

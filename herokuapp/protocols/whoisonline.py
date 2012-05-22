@@ -18,9 +18,12 @@ class WhoIsOnline(Protocol):
         super(WhoIsOnline, self).__init__(*args, **kw)
 
         principal = ptah.auth_service.get_current_principal()
-        self.user_id = principal.__uri__
-        self.user_name = principal.name
-
+        if principal:
+            self.user_id = principal.__uri__
+            self.user_name = principal.name
+        else:
+            self.user_id = None
+            self.user_name = 'Anonymous'
     def on_closed(self):
         super(WhoIsOnline, self).on_closed()
 
