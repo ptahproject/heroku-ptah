@@ -36,6 +36,7 @@ class WhoIsOnline(Protocol):
                 found = True
                 break
         logger.info('closed %s %s' % (self.session, found))
+        print 'closed %s %s' % (self.session, found)
 
         if not found:
             self.broadcast('disconnected', {'uid': self.user_id})
