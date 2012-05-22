@@ -1,4 +1,5 @@
 import os
+import logging
 
 import ptah
 from pyramid.config import Configurator
@@ -9,6 +10,7 @@ from pyramid.session import UnencryptedCookieSessionFactoryConfig
 auth_policy = AuthTktAuthenticationPolicy('secret')
 session_factory = UnencryptedCookieSessionFactoryConfig('secret')
 
+logger = logging.getLogger('herokuapp')
 
 def main(global_config, **settings):
     """ Function which returns a configured Pyramid/Ptah WSIG Application """
@@ -18,6 +20,10 @@ def main(global_config, **settings):
     durl = os.environ.get("DATABASE_URL")
     if durl:
         settings['sqlalchemy.url']=durl
+    else:
+        logger.info('Did not find DATABASE_URL! You must issue, '
+                    '$ heroku addons:add shared-database')
+
     config = Configurator(settings=settings,
                           session_factory = session_factory,
                           authentication_policy = auth_policy)

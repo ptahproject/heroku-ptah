@@ -7,9 +7,11 @@ typing - user is typing
 message - message
 """
 import ptah
+import logging
 from datetime import datetime
 from ptah.sockjs import protocol, Protocol
 
+logger = logging.getLogger('whoisonline')
 
 @protocol('ptah-whoisonline')
 class WhoIsOnline(Protocol):
@@ -24,6 +26,7 @@ class WhoIsOnline(Protocol):
         else:
             self.user_id = None
             self.user_name = 'Anonymous'
+
     def on_closed(self):
         super(WhoIsOnline, self).on_closed()
 
@@ -32,6 +35,7 @@ class WhoIsOnline(Protocol):
             if user.user_id == self.user_id:
                 found = True
                 break
+        logger.info('closed %s %s' % (self.session, found))
 
         if not found:
             self.broadcast('disconnected', {'uid': self.user_id})
