@@ -35,6 +35,8 @@ define(
             , action_activate: function(options) {
                 this.set_navitem(options.name)
                 this.workspace.empty()
+                console.log("action_activate")
+                console.log("activate" + options.name.substr(9))
                 this.workspace.append(
                     this.templates.render(
                         'group', this.data[options.name.substr(9)]))
@@ -46,11 +48,12 @@ define(
 
             , msg_list: function(data) {
                 this.data = data['settings']
-                this.action_activate({name: 'settings-herokuapp'})
+                this.action_activate({name: 'settings-'+name})
             }
 
             , msg_updated: function(data) {
                 var name = data['name']
+                console.log('msg_updated' + name)
                 this.data[name] = data
                 this.action_activate({name: 'settings-'+name})
             }

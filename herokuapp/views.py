@@ -5,16 +5,11 @@ from pyramid.view import view_config
 
 log = logging.getLogger(__name__)
 
-
 ptah.layout.register('page', renderer='herokuapp:ptemplates/layoutpage.pt', use_global_views=True)
-
 ptah.layout.register('ptah-page', renderer='herokuapp:ptemplates/layoutpage.pt', use_global_views=True)
-
-
 @ptah.layout('workspace', 
              parent="page", renderer="herokuapp:ptemplates/layoutworkspace.pt",
              use_global_views=True)
-
 class LayoutWorkspace(ptah.View):
 
     def update(self):
@@ -34,7 +29,6 @@ class ContentLayout(ptah.View):
 @view_config(renderer='herokuapp:ptemplates/homepage.pt',
              route_name='home')
 class HomepageView(object):
-
     def __init__(self, request):
         self.request = request
         ptah.include(request, 'bootstrap')
