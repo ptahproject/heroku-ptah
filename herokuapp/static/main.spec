@@ -1,4 +1,4 @@
-[test.js]
+[compiled-herokuapp.js]
 modules = 
    jquery
    sockjs
