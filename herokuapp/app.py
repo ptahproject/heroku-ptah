@@ -60,6 +60,9 @@ def main(global_config, **settings):
     # Refer: Pyramid's _Configuration Decorations and Code Scanning_
     config.scan()
 
+    config.commit()
+    ptah.sockjs.get_session_manager().start()
+
     return config.make_wsgi_app()
 
 
