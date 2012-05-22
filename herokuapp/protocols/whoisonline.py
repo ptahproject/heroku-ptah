@@ -28,6 +28,7 @@ class WhoIsOnline(Protocol):
             self.user_name = 'Anonymous'
 
     def on_closed(self):
+        print '#### on_closed'
         super(WhoIsOnline, self).on_closed()
 
         found = False
@@ -43,6 +44,7 @@ class WhoIsOnline(Protocol):
 
     def msg_load(self, data):
         """ init message handler """
+        print '#### msg_load'
         users = {}
         for user in self.instances.values():
             if user.user_id != self.user_id:
