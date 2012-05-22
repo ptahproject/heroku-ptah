@@ -10,9 +10,9 @@ import ptah
 from ptah.sockjs import protocol, Protocol
 
 
-@ptah.type('wscrud-file', 'WSCrud File')
+@ptah.type('herokuapp-file', 'herokuapp File')
 class File(ptah.get_base()):
-    __tablename__ = 'wscrud_file'
+    __tablename__ = 'herokuapp_files'
 
     id = sqla.Column(sqla.Integer(), primary_key=True)
     filename = sqla.Column(sqla.Unicode(255))

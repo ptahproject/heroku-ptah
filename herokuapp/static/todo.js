@@ -1,5 +1,5 @@
 define(
-    'todo', ['ptah', 'jquery', 'ptah-wscrud'],
+    'todo', ['ptah', 'jquery', 'herokuapp'],
 
     function(ptah, $, templates) {
         "use strict";

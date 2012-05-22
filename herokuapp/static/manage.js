@@ -1,7 +1,7 @@
 define(
     'ptah-manage', ['ptah', 'jquery',
                     'ptah-chat',
-                    'ptah-wscrud',
+                    'herokuapp',
                     'proto-ptah-whoisonline'],
 
     function(ptah, $, Chat, templates) {

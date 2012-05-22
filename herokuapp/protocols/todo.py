@@ -6,7 +6,7 @@ from ptah.sockjs import protocol, Protocol
 
 class Todo(ptah.get_base()):
 
-    __tablename__ = 'wscrud_todo'
+    __tablename__ = 'herokuapp_todo'
 
     id = sqla.Column(sqla.Integer(), primary_key=True)
     completed = sqla.Column(sqla.Boolean(), default=False)

@@ -1,5 +1,5 @@
 define(
-    'ptah-crud', ['ptah', 'jquery', 'ptah-wscrud', 'ptah-form', 'ckeditor'],
+    'ptah-crud', ['ptah', 'jquery', 'herokuapp', 'ptah-form', 'ckeditor'],
 
     function(ptah, $, templates, form) {
         "use strict";

@@ -3,5 +3,5 @@ modules =
    jquery
    sockjs
    ptah
-   ptah-wscrud
+   herokuapp
    ptah-templates

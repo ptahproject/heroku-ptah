@@ -1,5 +1,5 @@
 define(
-    'ptah-manage-settings', ['ptah', 'jquery', 'ptah-wscrud', 'ptah-form'],
+    'ptah-manage-settings', ['ptah', 'jquery', 'herokuapp', 'ptah-form'],
 
     function(ptah, $, templates, form) {
         "use strict";

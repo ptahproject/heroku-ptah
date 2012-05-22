@@ -1,7 +1,7 @@
 define(
     'ptah-manage-users',
     ['ptah', 'jquery',
-     'ptah-pager', 'ptah-wscrud', 'ptah-form',
+     'ptah-pager', 'herokuapp', 'ptah-form',
      'proto-ptah-whoisonline'],
 
     function(ptah, $, pager, templates, form) {

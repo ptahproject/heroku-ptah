@@ -34,7 +34,7 @@ class SettingsProtocol(Protocol):
 
     def msg_init(self, data):
         self.send('list', {'settings':
-                           {'ptah-wscrud':self.get_info('ptah-wscrud'),
+                           {'herokuapp':self.get_info('herokuapp'),
                             'ptahcrowd': self.get_info('ptahcrowd'),
                             }})
 

@@ -1,11 +1,11 @@
-# ptah_wscrud
+# herokuapp was ptah_wscrud
 
 def includeme(config):
     config.ptah_init_sockjs()
 
     # mustache templates
     config.register_mustache_bundle(
-        'ptah-wscrud', 'herokuapp:templates/')
+        'herokuapp', 'herokuapp:templates/')
 
     # amd modules
     config.register_amd_module(

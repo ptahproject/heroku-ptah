@@ -1,5 +1,5 @@
 define(
-    'ptah-files', ['ptah', 'jquery', 'ptah-wscrud', 'ptah-form'],
+    'ptah-files', ['ptah', 'jquery', 'herokuapp', 'ptah-form'],
 
     function(ptah, $, templates, form) {
         "use strict";

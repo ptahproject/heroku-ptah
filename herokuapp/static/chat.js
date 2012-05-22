@@ -1,5 +1,5 @@
 define(
-    'ptah-chat', ['ptah', 'jquery', 'ptah-wscrud', 'bootstrap',
+    'ptah-chat', ['ptah', 'jquery', 'herokuapp', 'bootstrap',
                   'proto-ptah-whoisonline'],
 
     function(ptah, $, templates) {
