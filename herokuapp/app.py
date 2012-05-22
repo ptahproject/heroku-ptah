@@ -59,7 +59,7 @@ def main(global_config, **settings):
 
 import ptah
 ptah.library(
-    'wscrud-styles',
+    'herokuapp-styles',
     path='herokuapp:static/styles.css',
     type="css",
     require=('bootstrap',))

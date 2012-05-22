@@ -75,4 +75,4 @@ class GroupEditForm(Form):
 
         self.close("Settings have been modified.")
         self.protocol.broadcast(
-            'updated', self.component.get_info(self.context.__name__))
+            'updated', self.protocol.get_info(self.context.__name__))

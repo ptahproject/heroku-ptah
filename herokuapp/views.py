@@ -49,5 +49,5 @@ class HomepageView(object):
              renderer='herokuapp:ptemplates/wstest.pt')
 
 def wstest_view(request):
-    ptah.include(request, 'wscrud-styles')
+    ptah.include(request, 'herokuapp-styles')
     return {}
