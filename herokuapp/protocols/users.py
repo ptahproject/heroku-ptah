@@ -195,7 +195,7 @@ class ModifyUserForm(Form, ModifyUserForm):
         if errors:
             return errors
 
-        user = self.user
+        user = self.context
 
         # update attrs
         user.name = data['name']

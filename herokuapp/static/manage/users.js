@@ -93,7 +93,6 @@ define(
                     data.users[i].online = this.wio.is_online(data.users[i].uri)
                 }
                 this.__dom__.append(this.templates.render('workspace', data))
-                ptah.scan_and_create(this.__dom__)
                 this.form = $('[data-form="users-listing"]', this.__dom__)
             },
 
