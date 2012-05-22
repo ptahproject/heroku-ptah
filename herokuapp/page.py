@@ -5,6 +5,9 @@ from pyramid.view import view_config
 import ptah
 import ptahcms
 
+# This will be moved to @ptah.type and no longer
+# require ptahcms.Content in a few days.
+
 class Page(ptahcms.Content):
     """
     A Page model which subclasses ptahcms.Content

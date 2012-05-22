@@ -6,7 +6,7 @@ from ptah.settings import ID_SETTINGS_GROUP, SettingRecord
 
 
 @protocol('ptah-manage-settings')
-class Settings(Protocol):
+class SettingsProtocol(Protocol):
 
     def get_info(self, name):
         group = ptah.get_cfg_storage(ID_SETTINGS_GROUP, self.registry)[name]
@@ -39,7 +39,7 @@ class Settings(Protocol):
                             }})
 
 
-@handler('modify', Settings)
+@handler('modify', SettingsProtocol)
 class GroupEditForm(Form):
 
     @property
@@ -74,5 +74,5 @@ class GroupEditForm(Form):
             self.context.updatedb(**data)
 
         self.close("Settings have been modified.")
-        self.component.broadcast(
+        self.protocol.broadcast(
             'updated', self.component.get_info(self.context.__name__))
