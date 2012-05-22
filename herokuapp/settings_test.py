@@ -1,7 +1,7 @@
 import ptah
 
 ptah.register_settings(
-    'ptah-wscrud',
+    'herokuapp-settings',
 
     ptah.form.TextField(
         'band',
@@ -21,6 +21,6 @@ ptah.register_settings(
         title = 'Favorite band 3',
         description = 'This is your favorite band.'),
 
-    title = 'ptah wscrud settings',
-    description = 'Configuration settings for ptah wscrud.'
+    title = 'herokuapp settings',
+    description = 'Configuration settings for herokuapp.'
     )

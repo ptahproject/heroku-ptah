@@ -46,7 +46,7 @@ define(
 
             , msg_list: function(data) {
                 this.data = data['settings']
-                this.action_activate({name: 'settings-ptah-wscrud'})
+                this.action_activate({name: 'settings-herokuapp'})
             }
 
             , msg_updated: function(data) {

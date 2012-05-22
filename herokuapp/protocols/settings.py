@@ -34,7 +34,7 @@ class SettingsProtocol(Protocol):
 
     def msg_init(self, data):
         self.send('list', {'settings':
-                           {'herokuapp':self.get_info('herokuapp'),
+                           {'herokuapp':self.get_info('herokuapp-settings'),
                             'ptahcrowd': self.get_info('ptahcrowd'),
                             }})
 
