@@ -36,11 +36,11 @@ The directory structure will look like:
 Ideally, you would have forked the repository first, and so checked out a
 writable clone in step five instead of a read-only copy.
 
-To run this code locally, do the following in newapp/heroku-ptah:
+To run this code locally, do the following in cloudapp/heroku-ptah:
 
 $ pip install -r localrequirements.txt
 $ python setup.py develop
-$ ../venv/bin/pserve settings.ini --reload
+$ ../cloudapp/bin/pserve settings.ini --reload
 
 Changes made to this skeleton from the default ptah_starter:
 
