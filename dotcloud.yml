@@ -2,7 +2,7 @@ www:
     type: custom
     buildscript: builder
     processes:
-        app: /home/dotcloud/env/bin/pserve dotcloud_settings.ini http_port=$PORT_WWW
+        app: /home/dotcloud/env/bin/pserve dotcloud_settings.ini http_port=$PORT_WWW db_uri=$DOTCLOUD_DB_POSTGRESQL_URL
     ports:
         www: http
     systempackages:
