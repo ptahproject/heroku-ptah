@@ -2,10 +2,8 @@ www:
     type: custom
     buildscript: builder
     processes:
-        app: /home/dotcloud/env/bin/pserve dotcloud_settings.ini http_port=$PORT_WWW db_uri=$DOTCLOUD_DATA_SQL_URL
+        app: /home/dotcloud/env/bin/pserve dotcloud_settings.ini http_port=$PORT_WWW 
     ports:
         www: http
     systempackages:
         - libev-dev
-db:
-    type: postgresql
