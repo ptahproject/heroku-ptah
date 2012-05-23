@@ -180,10 +180,10 @@ class ModifyUserForm(Form, ModifyUserForm):
             if user is None:
                 raise ValueError("User unknown")
 
-            self.sa = sa
+            sa.expunge(user)
             self.context = user
 
-            super(ModifyUserForm, self).update()
+        super(ModifyUserForm, self).update()
 
     @ptah.form.button('Cancel', name='close')
     def on_cancel(self):
@@ -195,25 +195,26 @@ class ModifyUserForm(Form, ModifyUserForm):
         if errors:
             return errors
 
-        user = self.context
+        with ptah.sa_session() as sa:
+            user = ptah.resolve(self.params['__uri__'])
 
-        # update attrs
-        user.name = data['name']
-        user.login = data['login']
-        user.email = data['login']
-        if data['password'] is not ptah.form.null:
-            user.password = ptah.pwd_tool.encode(data['password'])
+            # update attrs
+            user.name = data['name']
+            user.login = data['login']
+            user.email = data['login']
+            if data['password'] is not ptah.form.null:
+                user.password = ptah.pwd_tool.encode(data['password'])
 
-        # update props
-        user.validated = data['validated']
-        user.suspended = data['suspended']
+            # update props
+            user.validated = data['validated']
+            user.suspended = data['suspended']
 
-        # add roles and groups info
-        props = user.properties
-        props['roles'] = data['roles']
-        props['groups'] = data['groups']
+            # add roles and groups info
+            props = user.properties
+            props['roles'] = data['roles']
+            props['groups'] = data['groups']
 
-        info = self.protocol.get_user_data(user)
+            info = self.protocol.get_user_data(user)
 
         # done
         self.close('User properties has been updated.')
