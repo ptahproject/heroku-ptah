@@ -92,5 +92,6 @@ dotcloud::
 
 3. wsgi.py The python module which starts the WSGI server
 
-4. dotcloud *does* support SQLite so postgresql is not necessary
+4. dotcloud *does* support SQLite so postgresql is not necessary. although each
+   time you deploy you will lose your data.
 
