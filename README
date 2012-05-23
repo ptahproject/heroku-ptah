@@ -13,6 +13,17 @@ $ git push heroku master
 $ heroku ps:scale web=1
 $ heroku open
 
+To deploy this app on dotcloud, do the following:
+
+$ virtualenv cloudapp --distribute --no-site-packages
+$ cd cloudapp
+$ . bin/activate
+$ pip install dotcloud
+$ git clone git://github.com/ptahproject/heroku-ptah.git
+$ cd heroku-ptah
+$ dotcloud create ptah
+$ dotcloud push --all ptah
+
 The directory structure will look like:
   
   ./
@@ -26,12 +37,18 @@ The directory structure will look like:
       ./herokuapp
         ./__init__.py
         ./ ...
+      ./Procfile  
+      ./runapp.py
+      ./run
       ./ ...
-    ./Procfile
-    ./runapp.py
-    ./run
-    ./ ...
+      ./dotcloud.yml
+      ./builder
+      ./wsgi.py
+      ./ ...
 
+Heroku files are: Profile, runapp.py, and run
+
+dotcloud files are: dotcloud.yml, builder, wsgi.py
     
 Ideally, you would have forked the repository first, and so checked out a
 writable clone in step five instead of a read-only copy.
@@ -42,7 +59,10 @@ $ pip install -r localrequirements.txt
 $ python setup.py develop
 $ ../cloudapp/bin/pserve settings.ini --reload
 
+
 Changes made to this skeleton from the default ptah_starter:
+
+Heroku::
 
 1. Procfile added to tell Heroku what to run upon deployment to start the web
    service.
@@ -62,3 +82,15 @@ Changes made to this skeleton from the default ptah_starter:
    has been modified to use this environment variable (if present) to override
    the sqlalchemy.url parameter from settings.ini before the settings are
    applied.
+
+dotcloud::
+
+1. dotcloud.yml added to tell dotcloud what environment should be setup for the
+   project.  As well as how to start the web server.
+
+2. builder script which installs requirements and run herokuapp setup.py develop
+
+3. wsgi.py The python module which starts the WSGI server
+
+4. dotcloud *does* support SQLite so postgresql is not necessary
+

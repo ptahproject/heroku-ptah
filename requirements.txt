@@ -1,3 +1,4 @@
+waitress
 Chameleon==2.8.5
 Mako==0.7.0
 MarkupSafe==0.15

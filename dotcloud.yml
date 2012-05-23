@@ -2,8 +2,10 @@ www:
     type: custom
     buildscript: builder
     processes:
-        app: /home/dotcloud/env/bin/pserve dotcloud_settings.ini http_port=$PORT_WWW 
+        app: /home/dotcloud/env/bin/pserve dotcloud_settings.ini http_port=$PORT_WWW
     ports:
         www: http
     systempackages:
         - libev-dev
+db:
+    type: postgresql

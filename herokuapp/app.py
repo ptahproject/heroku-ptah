@@ -17,7 +17,11 @@ def main(global_config, **settings):
 
     # Info: This is how Pyramid is configured.
 
-    durl = os.environ.get("DATABASE_URL")
+    durl = os.environ.get("DATABASE_URL") #heroku
+
+    if not durl: #dotcloud
+       durl = os.environ.get("DOTCLOUD_DB_POSTGRESQL_URL")
+
     if durl:
         settings['sqlalchemy.url']=durl
     else:
