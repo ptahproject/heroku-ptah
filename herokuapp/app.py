@@ -19,9 +19,6 @@ def main(global_config, **settings):
 
     durl = os.environ.get("DATABASE_URL") #heroku
 
-    if not durl: #dotcloud
-       durl = os.environ.get("DOTCLOUD_DB_SQL_URL")
-
     if durl:
         settings['sqlalchemy.url']=durl
     else:
