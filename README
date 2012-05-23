@@ -13,6 +13,26 @@ $ git push heroku master
 $ heroku ps:scale web=1
 $ heroku open
 
+The directory structure will look like:
+  
+  ./
+  ./cloudapp
+    ./bin
+    ./src
+    ./lib
+    ./heroku-ptah
+      ./setup.py
+      ./settings.ini
+      ./herokuapp
+        ./__init__.py
+        ./ ...
+      ./ ...
+    ./Procfile
+    ./runapp.py
+    ./run
+    ./ ...
+
+    
 Ideally, you would have forked the repository first, and so checked out a
 writable clone in step five instead of a read-only copy.
 
