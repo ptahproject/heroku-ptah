@@ -8,17 +8,21 @@ define(
         "use strict";
 
         return ptah.ViewContainer.extend({
+            __name__: 'ptah.Manage',
+            
             connect: 'ptah-manage',
             templates: templates.manage
 
             , init: function() {
                 ptah.connect()
-
+                
+                this.chat = null
                 this.active = null
                 this.connected = false
             }
 
             , on_connect: function() {
+                this.__dom__.empty()
                 this.__dom__.append(this.templates.render('workspace'))
                 this.__workspace__ = $('[data-place="workspace"]', this.__dom__)
 
@@ -26,9 +30,10 @@ define(
                 this.__workspace__.append(
                     '<div data-container="ptah-chat"></div>')
 
-                this.__views__['ptah-chat'] = new Chat(
-                    this, $('[data-container="ptah-chat"]', this.__workspace__))
-                this.__views__['ptah-chat'].set_userlist_container(
+                this.chat = new Chat(this, 
+                         $('[data-container="ptah-chat"]', this.__workspace__))
+                this.chat.__view_name__ = 'ptah-chat'
+                this.chat.set_userlist_container(
                     $('[data-tag="userlist"]', this.__dom__))
 
                 $('.menu-items a[data-menuitem]').click(
