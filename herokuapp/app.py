@@ -21,6 +21,7 @@ def main(global_config, **settings):
 
     if not durl: #dotcloud
        print os.environ 
+       logger.info(str(os.environ))
        durl = os.environ.get("DOTCLOUD_DB_POSTGRESQL_URL")
 
     if durl:
