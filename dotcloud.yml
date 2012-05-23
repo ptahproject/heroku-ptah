@@ -7,3 +7,5 @@ www:
         www: http
     systempackages:
         - libev-dev
+db:
+    type: postgresql
